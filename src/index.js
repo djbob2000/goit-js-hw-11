@@ -1,6 +1,7 @@
 import { galleryLightbox } from './js/simplelightbox';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { fetchImages } from './js/API';
+
 const refs = {
   searchFormQuery: document.querySelector('#query'),
   searchButton: document.querySelector('#search-button'),
