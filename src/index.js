@@ -1,6 +1,7 @@
 import { galleryLightbox } from './js/simplelightbox';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { fetchImages } from './js/API';
+import { smoothScroll } from './js/smoothscroll';
 
 const refs = {
   searchFormQuery: document.querySelector('#query'),
@@ -30,6 +31,7 @@ async function onSearch(evt) {
       renderGallery(hits);
       galleryLightbox.refresh();
       refs.loadMoreBtn.classList.remove('visually-hidden');
+      smoothScroll();
     }
   } catch (error) {
     console.error(error);
@@ -51,6 +53,7 @@ async function loadMore(evt) {
     renderGallery(hits);
     galleryLightbox.refresh();
     refs.loadMoreBtn.classList.remove('visually-hidden');
+    smoothScroll();
   }
 }
 
